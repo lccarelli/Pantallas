@@ -15,9 +15,10 @@ int cliente_init(Cliente* list, int len){
 	int result = -1;
 	if(list!=NULL && len>0){
 
-		for(int i=0;i<len;i++){
+		for(int i=0;i<len;i++)
+		{
 			list[i].isEmpty = 1;
-			}
+		}
 		result = 0;
 	}
 	return result;
@@ -43,18 +44,28 @@ int cliente_getClient(Cliente* listClient, int lenClient, Contratacion* listCont
 				}
 			}
 
-			if(flagExiste == 0){
-
+			if(flagExiste == 0)
+			{
 				strncpy(listClient[indiceLibreClient].cuit_cliente, listCont[i].cuitCliente, CUIT_LEN);
-				listClient[indiceLibreClient].id = indiceLibreClient+1;
-				listClient[indiceLibreClient].facturacion = 0;
-				listClient[indiceLibreClient].cant_contratacion = 0;
-				listClient[indiceLibreClient].isEmpty = 0;
+				cliente_setClienteVacio(listClient, lenClient, indiceLibreClient);
 				indiceLibreClient++;
 			}
 		}
-
 		cliente_printList(listClient, CANT_CLIENT);
+	}
+	return result;
+}
+
+int cliente_setClienteVacio(Cliente* list, int len, int index){
+	int result = -1;
+
+	if(list!=NULL && len>0 && index>0){
+
+		list[index].id = index +1;
+		list[index].facturacion = 0;
+		list[index].cant_contratacion = 0;
+		list[index].isEmpty = 0;
+		result = 0;
 	}
 
 	return result;

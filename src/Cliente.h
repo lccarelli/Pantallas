@@ -29,6 +29,7 @@ struct {
 
 int cliente_init(Cliente* list, int len);
 int cliente_printList(Cliente* list, int len);
+int cliente_setClienteVacio(Cliente* list, int len, int index);
 int cliente_getClient(Cliente* listClient, int lenClient, Contratacion* listCont, int lenCont);
 int cliente_sortByPrecio(Cliente* list, int len, int order);
 int cliente_sortByCuit(Cliente* list, int len, int order);

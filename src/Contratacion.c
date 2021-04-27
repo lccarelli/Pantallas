@@ -86,7 +86,6 @@ int contratacion_add(Contratacion* list, int len, int index, Pantalla* listPanta
 					utn_getNumeroEntero(&buffer.dias, "\nIngrese Cantidad de dias", "\nERROR", 1, 365, 3) == 0 &&
 					utn_getTexto(buffer.nombreArchivo, 51, "\nIngrese Nombre Archivo", "\ERROR", 3) == 0)
 			{
-
 				buffer.isEmpty = 0;
 				buffer.id = index+1;
 				list[index] = buffer;
@@ -256,47 +255,38 @@ int contratacion_sortByCuit(Contratacion* list, int len, int order){
 	int flagSwap;
 	int newLen;
 
-
 	if(list!=NULL && len >0){
 
 		newLen = len-1;
-
 		do {
 			flagSwap=0;
-
-			for(int i=0; i<newLen;i++)
-			{
+			for(int i=0; i<newLen;i++){
 				if(!(list[i].isEmpty)){
 
-					switch(order)
-					{
+					switch(order){
 
 					case ORDER_ASC:
-
-						if(strncmp(list[i].cuitCliente, list[i+1].cuitCliente, sizeof(list[i].cuitCliente))> 0){
+						if(strncmp(list[i].cuitCliente, list[i+1].cuitCliente, sizeof(list[i].cuitCliente))> 0)
+						{
 							contratacion_swap(list, i, i+1);
 							flagSwap=1;
 						}
 						break;
 
 					case ORDER_DESC:
-
-						if(strncmp(list[i].cuitCliente, list[i+1].cuitCliente, sizeof(list[i].cuitCliente))< 0){
+						if(strncmp(list[i].cuitCliente, list[i+1].cuitCliente, sizeof(list[i].cuitCliente))< 0)
+						{
 							contratacion_swap(list, i, i+1);
 							flagSwap=1;
 						}
 						break;
 					}
 				}
-
 				newLen --;
 			}
-
 		} while (flagSwap);
-
 		result = 0;
 	}
-
 	return result;
 }
 

@@ -92,10 +92,8 @@ int main(void) {
 				if(flagAltaContratacion){
 					contratacion_function(
 							contratacion_modify,
-							listContratacion,
-							CANT_CONTRATACION,
-							listPantalla,
-							CANT_PANTALLA);
+							listContratacion,CANT_CONTRATACION,
+							listPantalla,CANT_PANTALLA);
 				} else {
 					printf("\n Antes debe cargar una contratacion");
 				}
@@ -107,10 +105,8 @@ int main(void) {
 				if(flagAltaContratacion){
 					contratacion_function(
 							contratacion_logicLow,
-							listContratacion,
-							CANT_CONTRATACION,
-							listPantalla,
-							CANT_PANTALLA);
+							listContratacion,CANT_CONTRATACION,
+							listPantalla,CANT_PANTALLA);
 				} else {
 					printf("\n Antes debe cargar una contratacion");
 				}

@@ -32,7 +32,7 @@ int pantalla_harcode(Pantalla* list, int len){
 			{3, "utn_3", "Mitre 400", 300.00, "lcd", 0},
 	};
 
-	if(3 <= len && 3 < 11){
+	if(3 <= len){
 
 		for(int i=0; i<3; i++){
 			list[i] = auxList[i];
